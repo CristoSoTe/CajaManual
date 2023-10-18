@@ -10,7 +10,21 @@ valor1 = 0; valor2 = 0; valor3 = 0; valor4 = 0; valor5 = 0; valor6 = 0; valor7 =
 totalCar_2 = 0; totalCar_liquidacion = 0; pico_salid_2 = 0; bandera = 0; series_liquidacion_atras_r1 = 0;
 serie_r1_atras = 0; control_parpadeo_inicial = 0; historico = 1
 
-#Comprueba que en el carton de salida no se supere los 1800 y no pongas letras
+def crea_archivo_de_memoria():
+	lista_series_venta = [str(numero_series_rango1["text"]), str(numero_series_rango2["text"]), str(numero_series_rango3["text"]), str(numero_series_rango4["text"]), str(numero_series_rango5["text"])]#,
+	#str(numero_series_rango6), str(numero_series_rango7), str(numero_series_rango8), str(numero_series_rango9), str(numero_series1), str(numero_series1), str(numero_series1),
+	#str(numero_series1), str(numero_series1), str(numero_series1), str(numero_series1), str(numero_series1), str(numero_series9)]
+
+	#lista_texto = [label.cget("text") for label in lista_series_venta]
+	lista_final = []
+	for label in lista_series_venta:
+		print(label)
+		# dato = label["text"]
+		# lista_final.append(dato)
+
+	with open('memoria.txt', 'w') as archivo:
+		archivo.write('\n'.join(lista_final))
+
 def validar_entrada(P):
 	if P == "":
 		return True
@@ -24,9 +38,10 @@ def validar_entrada(P):
 		return False
 
 def ejecutar():
-    ruta_ejecutable = r"C:\CajaMesaControl\Menu\Menu.exe"
-    os.startfile(ruta_ejecutable)
-    raiz.destroy()
+	crea_archivo_de_memoria()
+	ruta_ejecutable = r"C:\CajaMesaControl\Menu\Menu.exe"
+	os.startfile(ruta_ejecutable)
+	raiz.destroy()
 
 def datos_historico1():
 	liquidacion_historico_1_rango1.config(text=liquidacion_liqui1["text"])
