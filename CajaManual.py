@@ -5,12 +5,15 @@ import os
 global serie_r1_atras; global serie_r2_atras; global serie_r3_atras; global serie_r4_atras; global serie_r5_atras;
 global serie_r6_atras;  global serie_r7_atras;  global serie_r8_atras; global serie_r9_atras;
 global control_atras; global liquida_total; global series_liquidacion_atras_r1; global control_parpadeo_inicial
+global lista_final
 
 valor1 = 0; valor2 = 0; valor3 = 0; valor4 = 0; valor5 = 0; valor6 = 0; valor7 = 0; valor8 = 0; valor9 = 0;
 totalCar_2 = 0; totalCar_liquidacion = 0; pico_salid_2 = 0; bandera = 0; series_liquidacion_atras_r1 = 0;
 serie_r1_atras = 0; control_parpadeo_inicial = 0; historico = 1
 
 def crea_archivo_de_memoria():
+	global lista_final
+	
 	lista_series_venta = [str(numero_series_rango1["text"]), str(numero_series_rango2["text"]), str(numero_series_rango3["text"]), str(numero_series_rango4["text"]), str(numero_series_rango5["text"])]#,
 	#str(numero_series_rango6), str(numero_series_rango7), str(numero_series_rango8), str(numero_series_rango9), str(numero_series1), str(numero_series1), str(numero_series1),
 	#str(numero_series1), str(numero_series1), str(numero_series1), str(numero_series1), str(numero_series1), str(numero_series9)]
@@ -18,13 +21,18 @@ def crea_archivo_de_memoria():
 	#lista_texto = [label.cget("text") for label in lista_series_venta]
 	lista_final = []
 	for label in lista_series_venta:
-		print(label)
-		# dato = label["text"]
-		# lista_final.append(dato)
-
+		lista_final.append(label)
+	print(lista_final)
 	with open('memoria.txt', 'w') as archivo:
 		archivo.write('\n'.join(lista_final))
 
+def recuperar_memoria():
+	global lista_final
+	numero_series_rango1.config(text=lista_final[0])
+	numero_series_rango2.config(text=lista_final[1])
+	numero_series_rango3.config(text=lista_final[2])
+	numero_series_rango4.config(text=lista_final[3])
+	numero_series_rango5.config(text=lista_final[4])
 def validar_entrada(P):
 	if P == "":
 		return True
@@ -5326,4 +5334,5 @@ boton_cerrar = Button(root, text="Cerrar", command=poner_al_frente_raiz, bg="Red
 boton_cerrar.pack(pady=5)#lambda: poner_al_frente(raiz)
 
 SalidaEntry_1.focus_set()
+recuperar_memoria()
 raiz.mainloop()  
