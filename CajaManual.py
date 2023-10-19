@@ -11,30 +11,6 @@ valor1 = 0; valor2 = 0; valor3 = 0; valor4 = 0; valor5 = 0; valor6 = 0; valor7 =
 totalCar_2 = 0; totalCar_liquidacion = 0; pico_salid_2 = 0; bandera = 0; series_liquidacion_atras_r1 = 0;
 serie_r1_atras = 0; control_parpadeo_inicial = 0; historico = 1; lista_final = [""]
 
-def crea_archivo_de_memoria():
-	global lista_final
-
-	lista_series_venta = [str(numero_series_rango1["text"]), str(numero_series_rango2["text"]), str(numero_series_rango3["text"]), str(numero_series_rango4["text"]), str(numero_series_rango5["text"])]#,
-	#str(numero_series_rango6), str(numero_series_rango7), str(numero_series_rango8), str(numero_series_rango9), str(numero_series1), str(numero_series1), str(numero_series1),
-	#str(numero_series1), str(numero_series1), str(numero_series1), str(numero_series1), str(numero_series1), str(numero_series9)]
-
-	#lista_texto = [label.cget("text") for label in lista_series_venta]
-	lista_final = []
-	for label in lista_series_venta:
-		lista_final.append(label)
-	print(lista_final)
-	with open('memoria.txt', 'w') as archivo:
-		#archivo.write(lista_final)#'\n'.join(lista_final)
-		for elemento in lista_final:
-			archivo.write(elemento)
-
-def recuperar_memoria():
-	global lista_final
-	numero_series_rango1.config(text=str(lista_final[0]))
-	numero_series_rango2.config(text=str(lista_final[1]))
-	numero_series_rango3.config(text=str(lista_final[2]))
-	numero_series_rango4.config(text=str(lista_final[3]))
-	numero_series_rango5.config(text=str(lista_final[4]))
 def validar_entrada(P):
 	if P == "":
 		return True
@@ -48,9 +24,9 @@ def validar_entrada(P):
 		return False
 
 def ejecutar():
-	crea_archivo_de_memoria()
+	guardar_datos()
 	ruta_ejecutable = r"C:\CajaMesaControl\Menu\Menu.exe"
-	os.startfile(ruta_ejecutable)
+	#os.startfile(ruta_ejecutable)
 	raiz.destroy()
 
 def datos_historico1():
@@ -3104,6 +3080,28 @@ def calcula_liquidacion(num):
 	except:
 		pass
 
+# ------------------------------memoria--------------------------------------
+def guardar_datos():
+    with open("memoria.txt", "w") as archivo:
+        archivo.write(str(numero_series_rango1.cget("text")) + '\n')
+        archivo.write(str(numero_series_rango2.cget("text")) + '\n')
+        archivo.write(str(numero_series_rango3.cget("text")) + '\n')
+        archivo.write(str(numero_series_rango4.cget("text")) + '\n')
+        archivo.write(str(numero_series_rango5.cget("text")) + '\n')
+        archivo.write(str(numero_series_rango6.cget("text")) + '\n')
+        archivo.write(str(numero_series_rango7.cget("text")) + '\n')
+        archivo.write(str(numero_series_rango8.cget("text")) + '\n')
+        archivo.write(str(numero_series_rango9.cget("text")) + '\n')
+        archivo.write(str(numero_series1.cget("text")) + '\n')
+        archivo.write(str(numero_series2.cget("text")) + '\n')
+        archivo.write(str(numero_series3.cget("text")) + '\n')
+        archivo.write(str(numero_series4.cget("text")) + '\n')
+        archivo.write(str(numero_series5.cget("text")) + '\n')
+        archivo.write(str(numero_series6.cget("text")) + '\n')
+        archivo.write(str(numero_series7.cget("text")) + '\n')
+        archivo.write(str(numero_series8.cget("text")) + '\n')
+        archivo.write(str(numero_series9.cget("text")))
+
 # ---------------------------- Entorno Grafico---------------------------------------
 
 raiz = Tk()
@@ -5336,5 +5334,61 @@ boton_cerrar = Button(root, text="Cerrar", command=poner_al_frente_raiz, bg="Red
 boton_cerrar.pack(pady=5)#lambda: poner_al_frente(raiz)
 
 SalidaEntry_1.focus_set()
-recuperar_memoria()
+
+#-------------------- memoria--------------------------------
+def escribir_memoria():
+	global valor1; global valor2; global valor3; global valor4; global valor5; global valor6; global valor7; global valor8;  global valor9
+	try:
+	    with open("memoria.txt", "r") as archivo:
+	        lineas = archivo.readlines()
+	        dato1 = (lineas[0].strip() if len(lineas) >= 1 else "")
+	        dato2 = (lineas[1].strip() if len(lineas) >= 2 else "")
+	        dato3 = (lineas[2].strip() if len(lineas) >= 3 else "")
+	        dato4 = (lineas[3].strip() if len(lineas) >= 4 else "")
+	        dato5 = (lineas[4].strip() if len(lineas) >= 5 else "")
+	        dato6 = (lineas[5].strip() if len(lineas) >= 6 else "")
+	        dato7 = (lineas[6].strip() if len(lineas) >= 7 else "")
+	        dato8 = (lineas[7].strip() if len(lineas) >= 8 else "")
+	        dato9 = (lineas[8].strip() if len(lineas) >= 9 else "")
+	        dato10 = (lineas[9].strip() if len(lineas) >= 10 else "")
+	        dato11 = (lineas[10].strip() if len(lineas) >= 11 else "")
+	        dato12 = (lineas[11].strip() if len(lineas) >= 12 else "")
+	        dato13 = (lineas[12].strip() if len(lineas) >= 13 else "")
+	        dato14 = (lineas[13].strip() if len(lineas) >= 14 else "")
+	        dato15 = (lineas[14].strip() if len(lineas) >= 15 else "")
+	        dato16 = (lineas[15].strip() if len(lineas) >= 16 else "")
+	        dato17 = (lineas[16].strip() if len(lineas) >= 17 else "")
+	        dato18 = (lineas[17].strip() if len(lineas) >= 18 else "")
+
+	        numero_series_rango1.config(text=int(dato1))
+	        numero_series_rango2.config(text=int(dato2))
+	        numero_series_rango3.config(text=int(dato3))
+	        numero_series_rango4.config(text=int(dato4))
+	        numero_series_rango5.config(text=int(dato5))
+	        numero_series_rango6.config(text=int(dato6))
+	        numero_series_rango7.config(text=int(dato7))
+	        numero_series_rango8.config(text=int(dato8))
+	        numero_series_rango9.config(text=int(dato9))
+	        
+	        valor1 = int(dato10)
+	        valor2 = int(dato11)
+	        valor3 = int(dato12)
+	        valor4 = int(dato13)
+	        valor5 = int(dato14)
+	        valor6 = int(dato15)
+	        valor7 = int(dato16)
+	        valor8 = int(dato17)
+	        valor9 = int(dato18)
+	        numero_series1.config(text=valor1)
+	        numero_series2.config(text=valor2)
+	        numero_series3.config(text=valor3)
+	        numero_series4.config(text=valor4)
+	        numero_series5.config(text=valor5)
+	        numero_series6.config(text=valor6)
+	        numero_series7.config(text=valor7)
+	        numero_series8.config(text=valor8)
+	        numero_series9.config(text=valor9)
+	except FileNotFoundError:
+	    pass
+escribir_memoria()
 raiz.mainloop()  
