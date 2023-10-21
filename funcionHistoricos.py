@@ -1,4 +1,4 @@
-def datos_historico1(CajaManual):
+def datos_historico1():
 	liquidacion_historico_1_rango1.config(text=liquidacion_liqui1["text"])
 	pico_salida_historico_1_rango_1.config(text=pico_salida_liqui1["text"])
 	series_histirico_1_rango_1.config(text=series_liquidacionr1["text"])
@@ -45,7 +45,7 @@ def datos_historico1(CajaManual):
 	total_series_historico_1.config(text=total_series_liqui["text"])
 	total_cartones_historico_1.config(text=total_cartones_liquidacion["text"])
 
-def datos_historico2(CajaManual):
+def datos_historico2():
 	pico_salida_historico_2_rango_1.config(text=pico_salida_historico_1_rango_1["text"])
 	series_histirico_2_rango_1.config(text=series_histirico_1_rango_1["text"])
 	carton_salida_historico_2_rango_1.config(text=carton_salida_historico_1_rango_1["text"])
@@ -83,7 +83,7 @@ def datos_historico2(CajaManual):
 
 	datos_historico1()
 
-def datos_historico3(CajaManual):
+def datos_historico3():
 	pico_salida_historico_3_rango_1.config(text=pico_salida_historico_2_rango_1["text"])
 	series_histirico_3_rango_1.config(text=series_histirico_2_rango_1["text"])
 	carton_salida_historico_3_rango_1.config(text=carton_salida_historico_2_rango_1["text"])
@@ -121,7 +121,7 @@ def datos_historico3(CajaManual):
 
 	datos_historico2()
 
-def datos_historico4(CajaManual):
+def datos_historico4():
 	pico_salida_historico_4_rango_1.config(text=pico_salida_historico_3_rango_1["text"])
 	series_histirico_4_rango_1.config(text=series_histirico_3_rango_1["text"])
 	carton_salida_historico_4_rango_1.config(text=carton_salida_historico_3_rango_1["text"])
@@ -159,7 +159,7 @@ def datos_historico4(CajaManual):
 
 	datos_historico3()
 
-def datos_historico5(CajaManual):
+def datos_historico5():
 	pico_salida_historico_5_rango_1.config(text=pico_salida_historico_4_rango_1["text"])
 	series_histirico_5_rango_1.config(text=series_histirico_4_rango_1["text"])
 	carton_salida_historico_5_rango_1.config(text=carton_salida_historico_4_rango_1["text"])
@@ -197,7 +197,7 @@ def datos_historico5(CajaManual):
 
 	datos_historico4()
 
-def datos_historico6(CajaManual):
+def datos_historico6():
 	pico_salida_historico_6_rango_1.config(text=pico_salida_historico_5_rango_1["text"])
 	series_histirico_6_rango_1.config(text=series_histirico_5_rango_1["text"])
 	carton_salida_historico_6_rango_1.config(text=carton_salida_historico_5_rango_1["text"])

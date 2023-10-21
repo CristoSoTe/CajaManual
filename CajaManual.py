@@ -2741,7 +2741,7 @@ def liquida(num):
 					sube_a_liquidacion()
 					calcula_liquidacion(1.5)
 					if historico == 1:
-						datos_historico6()
+						funcionHistoricos.datos_historico6()
 					else:
 						datos_historico1()
 						historico = 1
