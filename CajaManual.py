@@ -26,7 +26,7 @@ def validar_entrada(P):
 def ejecutar():
 	guardar_datos()
 	ruta_ejecutable = r"C:\CajaMesaControl\Menu\Menu.exe"
-	#os.startfile(ruta_ejecutable)
+	os.startfile(ruta_ejecutable)
 	raiz.destroy()
 
 def datos_historico1():
