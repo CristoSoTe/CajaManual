@@ -477,7 +477,7 @@ def totalCaja():
 		total_linea_redondeado = round(total_linea, 2),"€"
 		linea.set(total_linea_redondeado)
 
-		total_bingo = float(liquida_total[0] * 0.545)
+		total_bingo = float(liquida_total[0] * 0.54)
 		total_bingo_redondeado = round(total_bingo, 2),"€"
 		bingo.set(total_bingo_redondeado)		
 		
